@@ -1,0 +1,42 @@
+service: aproposnet-get-website-category
+
+plugins:
+  - serverless-plugin-include-dependencies
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage, 'dev'}
+  region: us-west-2
+
+  environment:
+    CATEGORY_URL: ${file(./config/config.${self:provider.stage}.json):WEBSHRINK_URL}
+    CATEGORY_REQUEST: ${file(./config/config.${self:provider.stage}.json):WEBSHRINK_REQUEST}
+    KEY: ${file(./config/config.${self:provider.stage}.json):WEBSHRINK_KEY}
+    SECRET: ${file(./config/config.${self:provider.stage}.json):WEBSHRINK_SECRET}
+    CATEGORY_TABLE: ${file(./config/config.${self:provider.stage}.json):CATEGORY_TABLE}
+    CATEGORY_TABLE_KEY: ${file(./config/config.${self:provider.stage}.json):CATEGORY_TABLE_KEY}
+
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "ses:SendEmail"
+        - "ses:SendRawEmail"
+      Resource: "*"
+    - Effect: "Allow"
+      Action:
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:UpdateItem
+      Resource: "arn:aws:dynamodb:us-west-2:555001208805:table/${self:provider.environment.CATEGORY_TABLE}"
+
+functions:
+  getCategories:
+    handler: handler.GetCategories
+    events:
+      - http:
+          method: get
+          cors: true
+          path: /

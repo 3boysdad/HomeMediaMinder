@@ -1,0 +1,1 @@
+1. probably have an errors table that collects errors

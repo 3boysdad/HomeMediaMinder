@@ -1,0 +1,62 @@
+service: aproposnet-customer-device-update
+
+plugins:
+  - serverless-plugin-include-dependencies
+
+package:
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: ${opt:stage, 'dev'}
+  region: us-west-2
+
+  environment:
+    CUSTOMER_DEVICE: ${file(./config/config.${self:provider.stage}.json):CUSTOMER_DEVICE_TABLE}
+    CUSTOMER: ${file(./config/config.${self:provider.stage}.json):CUSTOMER_TABLE}
+    FROM_EMAIL: ${file(./config/config.${self:provider.stage}.json):FROM_EMAIL}
+    WELCOME_SUBJECT: ${file(./config/config.${self:provider.stage}.json):WELCOME_SUBJECT}
+    WELCOME_BODY: ${file(./config/config.${self:provider.stage}.json):WELCOME_BODY}
+    NEWDEVICE_SUBJECT: ${file(./config/config.${self:provider.stage}.json):NEWDEVICE_SUBJECT}
+    NEWDEVICE_BODY: ${file(./config/config.${self:provider.stage}.json):NEWDEVICE_BODY}
+    EMAIL_IDX : "idxEmailAddress"
+
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "ses:SendEmail"
+        - "ses:SendRawEmail"
+      Resource: "*"
+    - Effect: "Allow"
+      Action:
+        - "sns:*"
+      Resource: "*"
+    - Effect: "Allow"
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+      Resource: "arn:aws:dynamodb:us-west-2:555001208805:table/${self:provider.environment.CUSTOMER_DEVICE}/index/${self:provider.environment.EMAIL_IDX}"
+    - Effect: "Allow"
+      Action:
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:UpdateItem
+      Resource: "arn:aws:dynamodb:us-west-2:555001208805:table/${self:provider.environment.CUSTOMER_DEVICE}"
+    - Effect: "Allow"
+      Action:
+        - dynamodb:GetItem
+        - dynamodb:Query
+        - dynamodb:UpdateItem
+      Resource: "arn:aws:dynamodb:us-west-2:555001208805:table/${self:provider.environment.CUSTOMER}"
+
+functions:
+  updateDevice:
+    handler: handler.Update
+    events:
+      - http:
+          method: get
+          cors: true
+          path: /
+
