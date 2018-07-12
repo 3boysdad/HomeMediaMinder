@@ -1,0 +1,21 @@
+{
+  "name": "checkaccess",
+  "version": "1.0.0",
+  "description": "Checks and sees if the given IP and domain should be allowed",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-plugin-include-dependencies": "^3.1.0"
+  },
+  "dependencies": {
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "js-base64": "^2.4.5",
+    "md5": "^2.2.1",
+    "nodemailer": "^4.6.7"
+  }
+}

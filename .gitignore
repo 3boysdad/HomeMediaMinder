@@ -1,3 +1,6 @@
-/
-/CategoryLookUp/config
-/UpdateDevice/config
+node_modules
+CategoryLookUp/node_modules
+CategoryLookUp/config
+UpdateDevice/config
+UpdateDevice/node_modulesCheckAccess/node_modules
+CheckAccess/config
