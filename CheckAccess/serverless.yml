@@ -12,7 +12,7 @@ provider:
   environment:
     CATEGORY_URL: ${file(./config/config.${self:provider.stage}.json):WEBSHRINK_URL}
     CATEGORY_REQUEST: ${file(./config/config.${self:provider.stage}.json):WEBSHRINK_REQUEST}
-    KEY: ${file(./config/config.${self:provider.stage}.json):WEBSHRINK_KEY}
+    WEBSHRINK_KEY: ${file(./config/config.${self:provider.stage}.json):WEBSHRINK_KEY}
     SECRET: ${file(./config/config.${self:provider.stage}.json):WEBSHRINK_SECRET}
     CATEGORY_TABLE: ${file(./config/config.${self:provider.stage}.json):CATEGORY_TABLE}
     CATEGORY_TABLE_KEY: ${file(./config/config.${self:provider.stage}.json):CATEGORY_TABLE_KEY}
