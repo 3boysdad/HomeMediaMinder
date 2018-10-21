@@ -1,128 +1,66 @@
-let aws = require('aws-sdk');
 let common = require('./Common/common');
-let CustomerDao = require('./Common/Dao/CustomerDao');
-let DeviceDao = require('./Common/Dao/DeviceDao');
-let Model_Customer = require('./Common/Models/Model_Customer');
-let Model_Device = require('./Common/Models/Model_Device');
+let CustomerDao = require('./Dao/CustomerDao');
+let DeviceDao = require('./Dao/DeviceDao');
 
-function UpdateNetwork() { }
+function UpdateNetwork() {
 
-/////
-//
-// 
-// 
-//
-/////
-UpdateNetwork.prototype.UpdateDeviceIpByEmail = function(ipAddress,
+}
+
+UpdateNetwork.prototype.UpdateDeviceIpByEmail = async function(ipAddress,
                                     emailAddress,
                                     macAddress,
-                                    updateTime,
-                                    callback) {
+                                    updateTime) {
 
-    var customerDao = new CustomerDao();
-    customerDao.GetCustomer(emailAddress, function(error, customerModel) {
-        if (error) {
-            callback("Error in GetCustomer - " + emailAddress);
-        } else {
+    try {
+        let customerDao = new CustomerDao();
+        let deviceDao = new DeviceDao();
 
-            var deviceDao = new DeviceDao();
-            var totalRegisteredDevices = 0;
+        let customerModel = await customerDao.GetCustomer(emailAddress);
 
-            deviceDao.GetDevicesByEmail(customerModel.GetEmailAddress(), function(error, deviceModels) {
-                if ( error ) {
-                    callback(error);
-                } else {
-                    var requiresUpdate = false;
-                    var found = false;
-                    // the source of total devices always what they have registered.
-                    totalRegisteredDevices = deviceModels.length;
+        let deviceModels = await deviceDao.GetDevicesByEmail(customerModel.GetEmailAddress());
 
-                    for (var i = 0; i < deviceModels.length; i++) {
-                        if ( !found && deviceModels[i].GetMACAddress() === macAddress) {
-                            found = true;
+        // the source of total devices always what they have registered.
+        let totalRegisteredDevices = deviceModels.length;
 
-                            if ( deviceModels[i].GetIpAddress() !== ipAddress ) {
-                                requiresUpdate = true;
-                            }
-                            break;
-                        }
-                    }
+        for (let i = 0; i < deviceModels.length; i++) {
+            if (deviceModels[i].GetMACAddress() === macAddress) {
 
-                    if ( found ) {
-                        if ( requiresUpdate ) {
-                            // found the device and IP is different, great - just go update it.
-                            deviceDao.UpdateDevice(emailAddress, macAddress, ipAddress, updateTime, function(error) {
-                                if ( error ) {
-                                    callback("Error in UpdateDeviceIpByEmail - " + macAddress + "/" + ipAddress);
-                                } else {
-                                    callback();
-                                }
-                            });
-                        }
-                    } else {
-                        // if not found, -- if reach max, skip it. -if not max, increment, and update.
-                        if (totalRegisteredDevices === customerModel.GetMaximumDevices()) {
-                            // reached maximum devices
-                            callback("Maximum device reached for account - " + customerModel.GetEmailAddress() + " / " + macAddress)
-                        } else {
-                            // increment the number of devices on a account. then do the upsert.
-                            deviceDao.UpdateDevice(emailAddress, macAddress, ipAddress, updateTime, function(error) {
-                                if ( error ) {
-                                    callback("Error in UpdateDeviceIpByEmail - " + macAddress + "/" + ipAddress);
-                                } else {
-                                    totalRegisteredDevices++;
-
-                                    if (totalRegisteredDevices===1) {
-                                        common.sendEmailToCustomer(customerModel.GetEmailAddress(), 
-                                                process.env.WELCOME_SUBJECT, 
-                                                process.env.WELCOME_BODY + macAddress);
-
-                                    } else {
-                                        common.sendEmailToCustomer(customerModel.GetEmailAddress(), 
-                                                process.env.NEWDEVICE_SUBJECT, 
-                                                process.env.NEWDEVICE_BODY + macAddress);
-                                    }
-
-                                    customerDao.UpdateDeviceCount(customerModel.GetEmailAddress(), totalRegisteredDevices, function(error) {
-                                        if ( error ) {
-                                            callback(error);
-                                        } else {
-                                            callback();
-                                        }
-                                    });
-                                }
-                            });
-                        }
-                    }
+                if (deviceModels[i].GetIpAddress() !== ipAddress) {
+                    await deviceDao.UpdateDevice(emailAddress, macAddress, ipAddress, updateTime);
                 }
-            });
-        }
-    });
-}
-
-// TODO requires depreciation...
-UpdateNetwork.prototype.UpdateDeviceIpByMacAddress = function(ipAddress, 
-                                            macAddress,
-                                            updateTime,
-                                            callback) {
-
-    var deviceDao = new DeviceDao();
-
-    deviceDao.GetDeviceByMACAddress(macAddress, function(error, device) {
-        if ( error ) {
-            callback("Error in UpdateDeviceIpByMac - " + macAddress);
-        } else {
-            if ( device.GetIpAddress() !== ipAddress ) {
-                deviceDao.UpdateDevice(device.GetEmailAddress(), device.GetMACAddress(), ipAddress, updateTime, function(error) {
-                    if ( error ) {
-                        callback("Error in UpdateDeviceIpByMac - " + macAddress + "/" + ipAddress);
-                    } else {
-                        callback();
-                    }
-                });
+                return;
             }
         }
-    });
-}
+
+        // this will only fire if the device can't be found.
+        if (totalRegisteredDevices === customerModel.GetMaximumDevices()) {
+            throw("Maximum device reached for account - " + customerModel.GetEmailAddress() + " / " + macAddress);
+        }
+
+        await deviceDao.UpdateDevice(emailAddress, macAddress, ipAddress, updateTime);
+
+        totalRegisteredDevices++;
+        if (totalRegisteredDevices === 1) {
+            common.sendEmailToCustomer(customerModel.GetEmailAddress(),
+                process.env.WELCOME_SUBJECT,
+                process.env.WELCOME_BODY + macAddress);
+
+        } else {
+            common.sendEmailToCustomer(customerModel.GetEmailAddress(),
+                process.env.NEWDEVICE_SUBJECT,
+                process.env.NEWDEVICE_BODY + macAddress);
+        }
+
+        await customerDao.UpdateDeviceCount(customerModel.GetEmailAddress(), totalRegisteredDevices);
+
+    } catch(error) {
+        console.log('UpdateNetwork.UpdateDeviceIpByEmail - ipAddress: ' + ipAddress
+            + ' / emailAddress: ' + emailAddress
+            + ' / macAddress: ' + macAddress
+            + ' / updateTime: ' + updateTime
+            + ' / Error: ' + error);
+        throw('Error');
+    }
+};
 
 module.exports = UpdateNetwork;

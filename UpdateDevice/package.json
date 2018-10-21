@@ -9,7 +9,8 @@
   "author": "Michael Johnson",
   "license": "ISC",
   "dependencies": {
-    "nodemailer": "^4.6.5",
-    "serverless-plugin-include-dependencies": "^3.1.0"
+    "nodemailer": "^4.6.8",
+    "regex": "^0.1.1",
+    "serverless-plugin-include-dependencies": "^3.1.1"
   }
 }

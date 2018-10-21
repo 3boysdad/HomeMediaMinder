@@ -1,6 +1,6 @@
 'use strict';
-
 let aws = require('aws-sdk');
+let Regex = require('regex');
 let common = require('./Common/common');
 let UpdateNetwork = require('./UpdateNetwork');
 
@@ -10,41 +10,32 @@ let UpdateNetwork = require('./UpdateNetwork');
 //  bearing the MAC address in the event's querystring
 //
 ///////
-module.exports.Update = (event, context, callback) => {
+module.exports.Update = async (event, context) => {
+    try {
+        // query string parameters.
+        let macAddress = event.queryStringParameters.macaddress;
+        let emailAddress = event.queryStringParameters.emailaddress;
 
-  // query string parameters.
-  var macAddress = event.queryStringParameters.macaddress;
-  var emailAddress = event.queryStringParameters.emailaddress;
+        // the request context should hold these pieces for us.
+        let ipAddress = event.requestContext.identity.sourceIp;
+        let updateTime = event.requestContext.requestTimeEpoch;
 
-  // the request context should hold these pieces for us.
-  var ipAddress = event.requestContext.identity.sourceIp;
-  var updateTime = event.requestContext.requestTimeEpoch;
+        let macRegEx = new Regex('^[0-9a-f]{1,2}([\\.:-])(?:[0-9a-f]{1,2}\\1){4}[0-9a-f]{1,2}$');
 
-  var updateNetwork = new UpdateNetwork();
+        if ( !macAddress || !macRegEx(macAddress) || !emailAddress ) {
+            throw('Invalid MAC or email address');
+        }
 
-  if (macAddress) {
-    macAddress = macAddress.toUpperCase();
-  }
+        macAddress = macAddress.toUpperCase();
+        emailAddress = emailAddress.toLowerCase();
+        let updateNetwork = new UpdateNetwork();
 
-  if ( !emailAddress ) {
-    emailAddress = emailAddress.toLowerCase();
-    
-    updateNetwork.UpdateDeviceIpByMacAddress(ipAddress, macAddress, updateTime, function(error) {
-      if ( error ) {
-        console.log(error);
-        callback(null, common.getErrorResponse())
-      } else {
-        callback(null, common.getSuccessResponse())
-      }
-    });
-  } else {
-    updateNetwork.UpdateDeviceIpByEmail(ipAddress, emailAddress, macAddress, updateTime, function(error) {
-      if ( error ) {
-        console.log(error);
-        callback(null, common.getErrorResponse())
-      } else {
-        callback(null, common.getSuccessResponse())
-      }
-    });
-  }
+        await updateNetwork.UpdateDeviceIpByEmail(ipAddress, emailAddress, macAddress, updateTime);
+
+        return common.getSuccessResponse();
+
+    } catch(error) {
+        console.log('UpdateDevices.Update - Error: ' + error);
+        return common.getErrorResponse();
+    }
 };
