@@ -16,6 +16,8 @@ provider:
     SECRET: ${file(./config/config.${self:provider.stage}.json):WEBSHRINK_SECRET}
     CATEGORY_TABLE: ${file(./config/config.${self:provider.stage}.json):CATEGORY_TABLE}
     CATEGORY_TABLE_KEY: ${file(./config/config.${self:provider.stage}.json):CATEGORY_TABLE_KEY}
+    CATEGORYLIST_TABLE: ${file(./config/config.${self:provider.stage}.json):CATEGORYLIST_TABLE}
+    CATEGORYLIST_TABLE_KEY: ${file(./config/config.${self:provider.stage}.json):CATEGORYLIST_TABLE_KEY}
 
   iamRoleStatements:
     - Effect: "Allow"
@@ -31,6 +33,14 @@ provider:
         - dynamodb:Scan
         - dynamodb:UpdateItem
       Resource: "arn:aws:dynamodb:us-west-2:555001208805:table/${self:provider.environment.CATEGORY_TABLE}"
+    - Effect: "Allow"
+      Action:
+      - dynamodb:GetItem
+      - dynamodb:PutItem
+      - dynamodb:Query
+      - dynamodb:Scan
+      - dynamodb:UpdateItem
+      Resource: "arn:aws:dynamodb:us-west-2:555001208805:table/${self:provider.environment.CATEGORYLIST_TABLE}"
 
 functions:
   checkAccess:

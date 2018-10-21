@@ -1,38 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ddd09f4-223b-4bfd-8ad7-a3dedce39cbd" name="Default" comment="" />
+    <list default="true" id="1ddd09f4-223b-4bfd-8ad7-a3dedce39cbd" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/CheckAccess/Models/Model_CategoryList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UpdateDevice/Dao/CustomerDao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UpdateDevice/Dao/DeviceDao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UpdateDevice/Models/Model_Device.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CategoryLookUp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CategoryLookUp/Common/Dao/CategoryDao.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CategoryLookUp/Common/Dao/WebShrinkDao.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CategoryLookUp/Common/common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CategoryLookUp/Models/Model_Category.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CategoryLookUp/Models/Model_SiteData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CategoryLookUp/handler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CategoryLookUp/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CategoryLookUp/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CategoryLookUp/serverless.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CheckAccess/Dao/CategoryDatabaseDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/CheckAccess/Dao/CategoryDatabaseDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CheckAccess/Dao/WebShrinkDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/CheckAccess/Dao/WebShrinkDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CheckAccess/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/CheckAccess/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CheckAccess/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/CheckAccess/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CheckAccess/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/CheckAccess/serverless.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UpdateDevice/Common/Dao/CustomerDao.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UpdateDevice/Common/Dao/DeviceDao.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UpdateDevice/Common/Models/Model_Customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/UpdateDevice/Models/Model_Customer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UpdateDevice/Common/Models/Model_Device.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UpdateDevice/UpdateNetwork.js" beforeDir="false" afterPath="$PROJECT_DIR$/UpdateDevice/UpdateNetwork.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UpdateDevice/handler.js" beforeDir="false" afterPath="$PROJECT_DIR$/UpdateDevice/handler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UpdateDevice/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/UpdateDevice/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UpdateDevice/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/UpdateDevice/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UpdateDevice/serverless.yml" beforeDir="false" afterPath="$PROJECT_DIR$/UpdateDevice/serverless.yml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="3">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/CheckAccess/Models/Model_Category.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="85">
+                    <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/CheckAccess/handler.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="17">
+                    <caret line="1" selection-start-line="1" selection-end-line="1" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1316525339">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="53" />
+          <entry key="json" value="12" />
+          <entry key="yml" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSON" value="12" />
+          <entry key="JavaScript" value="53" />
+          <entry key="YAML" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="10709" />
+          <entry key="json" value="67" />
+          <entry key="txt" value="84" />
+          <entry key="yml" value="128" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JSON" value="67" />
+          <entry key="JavaScript" value="10709" />
+          <entry key="PLAIN_TEXT" value="84" />
+          <entry key="YAML" value="128" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="handler.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CheckAccess/handler.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UpdateDevice/handler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="78" column="56" selection-start-line="78" selection-start-column="56" selection-end-line="78" selection-end-column="56" />
+            <state relative-caret-position="578">
+              <caret line="40" column="2" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serverless.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CheckAccess/serverless.yml">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UpdateDevice/Dao/CustomerDao.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="272">
+              <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UpdateDevice/UpdateNetwork.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UpdateDevice/Dao/DeviceDao.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" selection-start-line="23" selection-end-line="25" />
+              <folding>
+                <element signature="e#3440#3783#0" />
+                <element signature="e#3634#4118#0" />
+                <element signature="e#4191#4497#0" />
+                <element signature="e#4568#4907#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UpdateDevice/Models/Model_Device.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CheckAccess/Dao/CategoryDatabaseDao.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="541">
+              <caret line="75" selection-start-line="73" selection-end-line="75" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>this.TableN</find>
+      <find>CATEGORYLIST_TABLE</find>
+      <find>var</find>
+      <find>.toUpper</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>let</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,25 +199,60 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/CategoryLookUp/Models/Model_Categories.js" />
+        <option value="$PROJECT_DIR$/CategoryLookUp/Models/Model_CategoryItem.js" />
+        <option value="$PROJECT_DIR$/CategoryLookUp/config/config.dev.json" />
+        <option value="$PROJECT_DIR$/CategoryLookUp/config/config.prod.json" />
+        <option value="$PROJECT_DIR$/CategoryLookUp/serverless.yml" />
+        <option value="$PROJECT_DIR$/CategoryLookUp/Common/Dao/WebShrinkDao.js" />
+        <option value="$PROJECT_DIR$/CategoryLookUp/Models/Model_CategoryList.js" />
+        <option value="$PROJECT_DIR$/CategoryLookUp/handler.js" />
+        <option value="$PROJECT_DIR$/CheckAccess/Models/Model_Category.js" />
+        <option value="$PROJECT_DIR$/CategoryLookUp/Common/Dao/DomainCategoryDao.js" />
+        <option value="$PROJECT_DIR$/CategoryLookUp/Common/Dao/CategoryDao.js" />
+        <option value="$PROJECT_DIR$/CheckAccess/Common/Dao/CategoryDao.js" />
+        <option value="$PROJECT_DIR$/CheckAccess/Common/Dao/WebShrinkDao.js" />
+        <option value="$PROJECT_DIR$/CheckAccess/Common/Dao/DomainCategoryDao.js" />
+        <option value="$PROJECT_DIR$/CheckAccess/Dao/CategoryDao.js" />
+        <option value="$PROJECT_DIR$/CheckAccess/Dao/DomainCategoryDao.js" />
+        <option value="$PROJECT_DIR$/CheckAccess/CategoryDatabaseDao.js" />
+        <option value="$PROJECT_DIR$/CheckAccess/WebShrinkDao.js" />
+        <option value="$PROJECT_DIR$/CheckAccess/DomainCategoryDao.js" />
         <option value="$PROJECT_DIR$/CheckAccess/handler.js" />
+        <option value="$PROJECT_DIR$/CheckAccess/Dao/WebShrinkDao.js" />
+        <option value="$PROJECT_DIR$/CheckAccess/Config/config.dev.json" />
+        <option value="$PROJECT_DIR$/CheckAccess/Config/config.prod.json" />
         <option value="$PROJECT_DIR$/CheckAccess/serverless.yml" />
+        <option value="$PROJECT_DIR$/UpdateDevice/serverless.yml" />
+        <option value="$PROJECT_DIR$/UpdateDevice/Common/Dao/CustomerDao.js" />
+        <option value="$PROJECT_DIR$/CheckAccess/Dao/CategoryDatabaseDao.js" />
+        <option value="$PROJECT_DIR$/UpdateDevice/Common/Dao/DeviceDao.js" />
+        <option value="$PROJECT_DIR$/UpdateDevice/Models/Model_Device.js" />
+        <option value="$PROJECT_DIR$/UpdateDevice/Dao/DeviceDao.js" />
+        <option value="$PROJECT_DIR$/UpdateDevice/Dao/CustomerDao.js" />
+        <option value="$PROJECT_DIR$/UpdateDevice/UpdateNetwork.js" />
+        <option value="$PROJECT_DIR$/UpdateDevice/handler.js" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/CategoryLookUp/node_modules" />
     <handled-path value="$PROJECT_DIR$/CheckAccess/node_modules" />
     <handled-path value="$PROJECT_DIR$/UpdateDevice/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/CategoryLookUp/package.json" />
       <path value="$PROJECT_DIR$/CheckAccess/package.json" />
       <path value="$PROJECT_DIR$/UpdateDevice/package.json" />
       <path value="$PROJECT_DIR$/node_modules/acorn-jsx/package.json" />
@@ -207,11 +401,14 @@
       <path value="$PROJECT_DIR$/node_modules/write/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="48" />
-    <option name="y" value="1" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2073" />
+    <option name="y" value="51" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -229,7 +426,7 @@
             <path>
               <item name="HomeMediaMinder" type="b2602c69:ProjectViewProjectNode" />
               <item name="HomeMediaMinder" type="462c0819:PsiDirectoryNode" />
-              <item name="CheckAccess" type="462c0819:PsiDirectoryNode" />
+              <item name="UpdateDevice" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -242,7 +439,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mike\WebStormProjects\HomeMediaMinder\UpdateDevice" />
+      <recent name="C:\Users\Mike\WebStormProjects\HomeMediaMinder\CheckAccess\Models" />
+      <recent name="C:\Users\Mike\WebStormProjects\HomeMediaMinder\CheckAccess\Dao" />
+      <recent name="C:\Users\Mike\WebStormProjects\HomeMediaMinder\CheckAccess" />
+      <recent name="C:\Users\Mike\WebStormProjects\HomeMediaMinder\CheckAccess\Common\Dao" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -268,33 +474,46 @@
       <updated>1530976299068</updated>
       <workItem from="1530976300282" duration="1494000" />
       <workItem from="1531062601657" duration="761000" />
+      <workItem from="1531961220825" duration="599000" />
+      <workItem from="1532536718988" duration="599000" />
+      <workItem from="1532539609726" duration="136000" />
+      <workItem from="1532539793571" duration="4081000" />
+      <workItem from="1539735219072" duration="38615000" />
     </task>
+    <task id="LOCAL-00001" summary="tamed the async beast.  got the GetCategory method call working 100%.">
+      <created>1540010944812</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1540010944812</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2255000" />
+    <option name="totallyTimeSpent" value="46285000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="48" y="1" width="1936" height="1056" extended-state="1" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20021075" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3292683" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.28277355" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3292683" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.261723" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.26818675" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,25 +522,250 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tamed the async beast.  got the GetCategory method call working 100%." />
+    <option name="LAST_COMMIT_MESSAGE" value="tamed the async beast.  got the GetCategory method call working 100%." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/CategoryLookUp/Common/Dao/WebShrinkDao.js</url>
+          <line>10</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/CategoryLookUp/Common/Dao/CategoryDao.js</url>
+          <line>11</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/CheckAccess/Dao/WebShrinkDao.js</url>
+          <line>59</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CheckAccess/handler.js">
+    <entry file="file://$PROJECT_DIR$/UpdateDevice/config/config.prod.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CategoryLookUp/Models/Model_CategoryItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="78" column="56" selection-start-line="78" selection-start-column="56" selection-end-line="78" selection-end-column="56" />
+        <state>
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CheckAccess/handler.js">
+    <entry file="file://$PROJECT_DIR$/CategoryLookUp/config/config.prod.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="78" column="56" selection-start-line="78" selection-start-column="56" selection-end-line="78" selection-end-column="56" />
+        <state relative-caret-position="119">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="23" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckAccess/Dao/CategoryDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckAccess/Dao/WebShrinkDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckAccess/Common/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckAccess/Dao/WebShrinkDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#1070#1078#0" />
+            <element signature="e#1451#1459#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckAccess/Dao/DomainCategoryDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckAccess/Models/Model_CategoryList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckAccess/Config/config.prod.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckAccess/Config/config.dev.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CategoryLookUp/config/config.dev.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="7" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CategoryLookUp/Common/Dao/CategoryDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="98" lean-forward="true" selection-start-line="70" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CategoryLookUp/Common/Dao/WebShrinkDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+          <folding>
+            <element signature="e#326#1379#0" />
+            <element signature="e#1440#2407#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CategoryLookUp/Common/common.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CategoryLookUp/Models/Model_Category.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckAccess/Models/Model_SiteData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CategoryLookUp/Models/Model_SiteData.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CategoryLookUp/serverless.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="43" lean-forward="true" selection-start-line="35" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CategoryLookUp/handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="51" column="69" lean-forward="true" selection-start-line="51" selection-start-column="69" selection-end-line="51" selection-end-column="69" />
+          <folding>
+            <element signature="e#527#1476#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UpdateDevice/config/config.dev.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/CheckAccess/serverless.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="714">
+          <caret line="42" column="109" selection-start-line="42" selection-start-column="109" selection-end-line="42" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UpdateDevice/serverless.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckAccess/Dao/CategoryDatabaseDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="75" selection-start-line="73" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckAccess/Models/Model_Category.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="70" selection-start-line="5" selection-start-column="70" selection-end-line="5" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UpdateDevice/Models/Model_Device.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UpdateDevice/Dao/DeviceDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="23" selection-end-line="25" />
+          <folding>
+            <element signature="e#3440#3783#0" />
+            <element signature="e#3634#4118#0" />
+            <element signature="e#4191#4497#0" />
+            <element signature="e#4568#4907#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CheckAccess/handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UpdateDevice/UpdateNetwork.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UpdateDevice/Dao/CustomerDao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="60" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UpdateDevice/handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="40" column="2" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
         </state>
       </provider>
     </entry>

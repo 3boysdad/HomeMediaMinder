@@ -1,16 +1,13 @@
-let aws = require('aws-sdk');
 let Base64 = require('js-base64').Base64;
 let md5 = require('md5');
-let https = require('https');
 let axios = require('axios');
-
 let Model_SiteData = require('../Models/Model_SiteData');
 
 function WebShrinkDao() {
 }
 
 /**
- * WebShrink Method
+ * WebShrink Methods
  * **/
 WebShrinkDao.prototype.GetCategories = async function(domain) {
 
@@ -34,6 +31,30 @@ WebShrinkDao.prototype.GetCategories = async function(domain) {
         console.log('WebShrinkDao.GetCategories - Domain: ' + domain + ' / Error: ' + error);
         throw('Error');
     }
+};
+
+WebShrinkDao.prototype.GetAllCategories = async function() {
+    try {
+        let requestConfig = this.GetRequestConfig();
+
+        let result = await axios.get(url, requestConfig);
+
+        if ( result.status===200) {
+            if ( result.data.data.length === 1) {
+                return result.data);
+            }
+
+            throw('Incomplete/Inaccurate response - ' + result.data);
+
+        } else {
+            throw(`STATUS: ${result.status} \\ HEADERS: ${JSON.stringify(result.headers)}`);
+        }
+
+    } catch(error) {
+        console.log('WebShrinkDao.GetAllCategories - Error: ' + error);
+        throw('Error');
+    }
+
 };
 
 WebShrinkDao.prototype.GetRequestConfig = function() {
