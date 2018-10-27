@@ -84,7 +84,7 @@ CategoryDatabaseDao.prototype.SaveCategoryItems = async function(categoryListIte
 *
 * */
 CategoryDatabaseDao.prototype.GetFindDomainParam = function(domain) {
-    var params = {
+    let params = {
         TableName : this.UrlCategoryTable,
         KeyConditionExpression: "#domain = :url",
         ExpressionAttributeNames:{
@@ -99,16 +99,16 @@ CategoryDatabaseDao.prototype.GetFindDomainParam = function(domain) {
 };
 
 CategoryDatabaseDao.prototype.GetPutParam = function(siteData) {
-    var param = {
+    let param = {
         TableName: this.UrlCategoryTable,
         Item : siteData
-    }
+    };
 
     return param;
 };
 
-CategoryDao.prototype.GetPutCategoryListParam = function(categoryListItem) {
-    var param = {
+CategoryDatabaseDao.prototype.GetPutCategoryListParam = function(categoryListItem) {
+    let param = {
         TableName: this.CategoryListTable,
         Item : categoryListItem
     };

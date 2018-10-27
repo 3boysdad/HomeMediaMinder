@@ -21,30 +21,36 @@ module.exports.CategoryLookUp = async (event, context) => {
     }
 };
 
-module.exports.CheckAccess = (event, context, callback) => {
-    if (event.httpMethod !== 'GET') {
-        callback(null, common.getErrorResponse());
+module.exports.CheckAccess = (event, context) => async {
+    try {
+        if (!event.queryStringParameters
+            || !event.queryStringParameters.ipAddress
+            || event.queryStringParameters.ipAddress === undefined
+            || !event.queryStringParameters.domain
+            || event.queryStringParameters.domain === undefined) {
+            throw('Missing parameters ipAddress or domain');
+        }
+
+        let ipAddress = event.queryStringParameters.ipAddress;
+        let domain = event.queryStringParameters.domain;
+        let domainCategoryDao = new DomainCategoryDao();
+
+        let getCategories = await domainCategoryDao.GetCategories(domain);
+
+    } catch(error) {
+        console.log("CheckAccess - Error: " + error);
+        return common.getErrorResponse();
     }
 
-    if (!event.queryStringParameters
-        || !event.queryStringParameters.ipAddress
-        || event.queryStringParameters.ipAddress === undefined
-        || !event.queryStringParameters.domain
-        || event.queryStringParameters.domain === undefined) {
-        callback(null, common.getErrorResponse());
-    }
+
 
     /*
     * ipAddress - the IP address of the user-agent making the DNS request.
     * domain - the domain being required by the user-agent.
     * */
 
-    let ipAddress = event.queryStringParameters.ipAddress;
-    let domain = event.queryStringParameters.domain;
 
-    let domainCategoryDao = new DomainCategoryDao();
 
-    var getCategories = domainCategoryDao.GetCategories(domain);
     // TODO need to gather what to block from the Customer
 
     Promise.all([getCategories])
