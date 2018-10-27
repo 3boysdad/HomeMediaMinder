@@ -9,6 +9,7 @@ DomainCategoryDao.prototype.GetCategories = async function(domain) {
     let webShrinkDao = new WebShrinkDao();
 
     try {
+
         let siteData = await categoryDao.GetCategories(domain);
         return siteData;
 
@@ -19,9 +20,9 @@ DomainCategoryDao.prototype.GetCategories = async function(domain) {
             await categoryDao.SaveCategories(siteData);
 
             return siteData;
-
         } catch(error) {
-            throw(error);
+            console.log('DomainCategoryDao.GetCategories - Error: ' + error);
+            throw('Error');
         }
     }
 };

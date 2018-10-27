@@ -41,7 +41,7 @@ WebShrinkDao.prototype.GetAllCategories = async function() {
 
         if ( result.status===200) {
             if ( result.data.data.length === 1) {
-                return result.data);
+                return result.data;
             }
 
             throw('Incomplete/Inaccurate response - ' + result.data);
@@ -54,7 +54,6 @@ WebShrinkDao.prototype.GetAllCategories = async function() {
         console.log('WebShrinkDao.GetAllCategories - Error: ' + error);
         throw('Error');
     }
-
 };
 
 WebShrinkDao.prototype.GetRequestConfig = function() {
